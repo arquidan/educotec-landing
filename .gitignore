@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Source material (kept locally, not part of the website)
+design_handoff_educotec_website/
+Educotec_Website_Copy_EN_ES.md
+EDUCOTECSolutions.png
+
+# Full-resolution original photos (the site uses the web copies in assets/photos/)
+assets/img_*.jpg

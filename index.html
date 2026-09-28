@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--
+  EDUCOTEC SOLUTIONS — ONE-PAGE WEBSITE
+  ----------------------------------------------------------------------------
+  • Website TEXT (English & Spanish) is in  js/translations.js  — edit it there.
+    The English text in this file is only a fallback for search engines and
+    for visitors without JavaScript; it is replaced automatically on load.
+  • CONTACT DETAILS: search this file for  [PHONE]  and  [EMAIL]
+    (Contact section + "Structured data" block in the <head>).
+  • CONTACT FORM ADDRESS: search this file for  YOUR_FORM_ID.
+  • WEBSITE ADDRESS: search this file for  YOUR-DOMAIN  (social previews + Google).
+  • COLORS & FONTS: see the top of  css/styles.css.
+  See README.md for step-by-step instructions.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title and description are switched automatically when the language changes
+       (texts in js/translations.js → seo). -->
+  <title>Educotec Solutions — Educational Consulting & Technologies in Miami</title>
+  <meta name="description" content="Training, consulting, educational technology and school facility support for students, parents and teachers. Services in English, Spanish and French.">
+  <meta name="theme-color" content="#14325C">
+
+  <!-- Lets the stylesheet know JavaScript is on (used for the fade-in effect) -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Social media previews (Facebook, LinkedIn, WhatsApp, X).
+       Replace https://www.YOUR-DOMAIN.com with the real website address. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Educotec Solutions">
+  <meta property="og:title" content="Educotec Solutions — Educational Consulting & Technologies in Miami">
+  <meta property="og:description" content="Training, consulting, educational technology and school facility support for students, parents and teachers. Services in English, Spanish and French.">
+  <meta property="og:url" content="https://www.educotecsolutions.com/">
+  <meta property="og:image" content="https://www.educotecsolutions.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Browser tab icon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Font: Figtree from Google Fonts (falls back to the system font if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Structured data for Google (LocalBusiness in Miami, Florida).
+       Replace [PHONE], [EMAIL] and YOUR-DOMAIN with the real details. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Educotec Solutions",
+    "description": "Training, consulting, educational technology and school facility support for students, parents and teachers. Services in English, Spanish and French.",
+    "url": "www.educotecsolutions.com",
+    "logo": "https://www.educotecsolutions.com/assets/educotec-logo.png",
+    "image": "https://www.educotecsolutions.com/assets/og-image.jpg",
+    "telephone": "(305) 781-8447",
+    "email": "mvian3@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Miami", "Florida", "Puerto Rico", "Latin America", "Caribbean"],
+    "availableLanguage": ["English", "Spanish", "French"]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Icon library: each icon is drawn once here and reused below with <use href="#icon-name">. -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M16 3.1a4 4 0 0 1 0 7.8M21 21v-2a4 4 0 0 0-3-3.9"/></symbol>
+      <symbol id="i-school" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-5h4v5"/></symbol>
+      <symbol id="i-presentation" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="12" rx="1.5"/><path d="M12 15v6M8 21h8M7 8h6M7 11h4"/></symbol>
+      <symbol id="i-search-check" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11l2 2 4-4"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.8 4.9L19 9.5l-5.2 1.6L12 16l-1.8-4.9L5 9.5l5.2-1.6z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+      <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1.5"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main" data-i18n="ui.skipLink">Skip to main content</a>
+
+  <!-- =====================================================================
+       HEADER (sticky navigation + language switcher)
+       ================================================================== -->
+  <header class="site-header" id="top">
+    <div class="container header-bar">
+      <a class="brand" href="#top" aria-label="Educotec Solutions — home" data-i18n-aria="ui.home">
+        <img class="brand-logo" src="assets/educotec-logo.png" alt="Educotec Solutions" width="161" height="44">
+        <span class="brand-tagline" data-i18n="header.tagline">Educational Consulting & Technologies</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-i18n-aria="ui.mainNav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+          <li><a class="nav-link" href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a class="nav-link" href="#who" data-i18n="nav.who">Who We Serve</a></li>
+          <li><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <!-- Only visible inside the mobile menu -->
+        <a class="btn btn-primary nav-cta" href="#contact" data-i18n="hero.ctaContact">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language buttons are created automatically from js/translations.js -->
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="ui.language" data-lang-toggle="code"></div>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Open menu" data-i18n-aria="ui.openMenu">
+          <svg class="icon icon-open" width="22" height="22" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" width="22" height="22" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- =====================================================================
+         HERO
+         ================================================================== -->
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <ul class="chips" role="list">
+            <li class="chip chip-navy" data-i18n="pillars.educationTitle">Education</li>
+            <li class="chip chip-teal" data-i18n="pillars.healthTitle">Health</li>
+            <li class="chip chip-orange" data-i18n="pillars.technologyTitle">Technology</li>
+          </ul>
+          <h1 class="hero-title" data-i18n="hero.title">Empowering schools through Education, Health and Technology</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Educotec Solutions helps students, parents and teachers thrive with expert training, consulting and the tools a modern school needs, in English, Spanish and French.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services" data-i18n="hero.ctaServices">Our Services</a>
+            <a class="btn btn-secondary" href="#contact" data-i18n="hero.ctaContact">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="hero-media reveal">
+          <!-- PHOTO — to change it, replace the files in assets/photos/ and the alt text in js/translations.js (hero.photoAlt) -->
+          <img class="photo photo-5x4 photo-shadow" src="assets/photos/img_02-1600.jpg"
+               srcset="assets/photos/img_02-800.jpg 800w, assets/photos/img_02-1600.jpg 1600w"
+               sizes="(min-width: 1000px) 570px, 100vw" width="1600" height="1066" fetchpriority="high" decoding="async"
+               alt="Teacher and students working together on laptops in a classroom" data-i18n-alt="hero.photoAlt">
+          <div class="hero-badge">
+            <span class="hero-badge-number" data-count-to="34">34</span>
+            <span class="hero-badge-text" data-i18n="about.stat1Text">served by a virtual library we developed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ABOUT US (+ three highlight stats)
+         ================================================================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-stack">
+        <div class="about-grid">
+          <div class="stack-22 reveal">
+            <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+            <h2 class="section-title" id="about-title" data-i18n="about.title">Decades of experience across the Americas</h2>
+            <p class="body-lg" data-i18n="about.body">Our founders have built their careers in education throughout Puerto Rico, Latin America and the Caribbean. They have prepared and supervised K-12 and university teachers, trained school leaders, and led technology and virtual learning initiatives, including the development of a virtual library serving 34 countries. Working in English, Spanish and French, they bring a truly multicultural perspective to every school and family they serve.</p>
+            <ul class="regions" role="list">
+              <li class="region" data-i18n="about.region1">Puerto Rico</li>
+              <li class="region" data-i18n="about.region2">Latin America</li>
+              <li class="region" data-i18n="about.region3">the Caribbean</li>
+            </ul>
+          </div>
+          <!-- PHOTO — alt text in js/translations.js (about.photoAlt) -->
+          <img class="photo photo-4x3 reveal" src="assets/photos/img_07-1600.jpg"
+               srcset="assets/photos/img_07-800.jpg 800w, assets/photos/img_07-1600.jpg 1600w"
+               sizes="(min-width: 1000px) 560px, 100vw" width="1600" height="1073" loading="lazy" decoding="async"
+               alt="Adults taking notes during an educational workshop" data-i18n-alt="about.photoAlt">
+        </div>
+
+        <!-- Highlight numbers. To change a number, edit it here AND its data-count-to value. -->
+        <ul class="stats reveal" role="list">
+          <li class="stat">
+            <span class="stat-number stat-orange" data-count-to="34">34</span>
+            <span class="stat-label" data-i18n="about.stat1Label">countries</span>
+            <span class="stat-text" data-i18n="about.stat1Text">served by a virtual library we developed</span>
+          </li>
+          <li class="stat">
+            <span class="stat-number stat-teal" data-count-to="3">3</span>
+            <span class="stat-label" data-i18n="about.stat2Label">languages</span>
+            <span class="stat-text" data-i18n="about.stat2Text">English, Spanish and French</span>
+          </li>
+          <li class="stat">
+            <span class="stat-number stat-lime">K-12</span>
+            <span class="stat-label" data-i18n="about.stat3Label">and university</span>
+            <span class="stat-text" data-i18n="about.stat3Text">teacher preparation and supervision</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PILLARS
+         ================================================================== -->
+    <section class="section pillars" aria-labelledby="pillars-title">
+      <div class="container stack-32">
+        <h2 class="eyebrow eyebrow-center" id="pillars-title" data-i18n="pillars.eyebrow">Pillars</h2>
+        <div class="grid grid-280">
+          <article class="card pillar pillar-navy reveal">
+            <span class="icon-tile icon-tile-lg tile-navy"><svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-book"/></svg></span>
+            <h3 class="card-title-lg" data-i18n="pillars.educationTitle">Education</h3>
+            <p class="card-text" data-i18n="pillars.educationText">Proven strategies that strengthen teaching and learning.</p>
+          </article>
+          <article class="card pillar pillar-teal reveal">
+            <span class="icon-tile icon-tile-lg tile-teal"><svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <h3 class="card-title-lg" data-i18n="pillars.healthTitle">Health</h3>
+            <p class="card-text" data-i18n="pillars.healthText">Safe, healthy environments where students can focus and grow.</p>
+          </article>
+          <article class="card pillar pillar-orange reveal">
+            <span class="icon-tile icon-tile-lg tile-orange"><svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+            <h3 class="card-title-lg" data-i18n="pillars.technologyTitle">Technology</h3>
+            <p class="card-text" data-i18n="pillars.technologyText">The right tools and training to make technology work in the classroom.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         WHO WE SERVE
+         ================================================================== -->
+    <section class="section who" id="who" aria-labelledby="who-title">
+      <div class="container stack-40">
+        <h2 class="section-title" id="who-title" data-i18n="who.title">Who We Serve</h2>
+        <div class="grid grid-300">
+          <article class="audience reveal">
+            <img class="photo photo-3x2" src="assets/photos/img_01-1600.jpg"
+               srcset="assets/photos/img_01-800.jpg 800w, assets/photos/img_01-1600.jpg 1600w"
+               sizes="(min-width: 1000px) 380px, (min-width: 700px) 50vw, 100vw" width="1600" height="1066" loading="lazy" decoding="async"
+               alt="Students studying together with laptops and books in a library" data-i18n-alt="who.studentsPhotoAlt">
+            <div class="audience-head">
+              <span class="icon-tile icon-tile-sm tile-navy"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-cap"/></svg></span>
+              <h3 class="card-title" data-i18n="who.studentsTitle">Students</h3>
+            </div>
+            <p class="card-text" data-i18n="who.studentsText">Programs that build skills, confidence and readiness for a digital world.</p>
+          </article>
+          <article class="audience reveal">
+            <img class="photo photo-3x2" src="assets/photos/img_03-1600.jpg"
+               srcset="assets/photos/img_03-800.jpg 800w, assets/photos/img_03-1600.jpg 1600w"
+               sizes="(min-width: 1000px) 380px, (min-width: 700px) 50vw, 100vw" width="1600" height="900" loading="lazy" decoding="async"
+               alt="Father helping his son with homework at home" data-i18n-alt="who.parentsPhotoAlt">
+            <div class="audience-head">
+              <span class="icon-tile icon-tile-sm tile-teal"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <h3 class="card-title" data-i18n="who.parentsTitle">Parents</h3>
+            </div>
+            <p class="card-text" data-i18n="who.parentsText">Tools and workshops that help families take an active role in their children's education.</p>
+          </article>
+          <article class="audience reveal">
+            <img class="photo photo-3x2" src="assets/photos/img_08-1600.jpg"
+               srcset="assets/photos/img_08-800.jpg 800w, assets/photos/img_08-1600.jpg 1600w"
+               sizes="(min-width: 1000px) 380px, (min-width: 700px) 50vw, 100vw" width="1600" height="1068" loading="lazy" decoding="async"
+               alt="Educators attending a professional development session" data-i18n-alt="who.teachersPhotoAlt">
+            <div class="audience-head">
+              <span class="icon-tile icon-tile-sm tile-orange"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-school"/></svg></span>
+              <h3 class="card-title" data-i18n="who.teachersTitle">Teachers &amp; School Leaders</h3>
+            </div>
+            <p class="card-text" data-i18n="who.teachersText">Professional development that brings new strategies and technologies into every classroom.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SERVICES (five cards)
+         ================================================================== -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container stack-40">
+        <h2 class="section-title" id="services-title" data-i18n="services.title">Services</h2>
+        <div class="grid grid-320">
+
+          <article class="card service reveal">
+            <span class="icon-tile icon-tile-md tile-navy"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-presentation"/></svg></span>
+            <h3 class="card-title" data-i18n="services.training.title">Training</h3>
+            <ul class="bullets" role="list">
+              <li data-i18n="services.training.item1">Professional development for teachers and K-12 administrators</li>
+              <li data-i18n="services.training.item2">Programs that connect parents, teachers and students</li>
+              <li data-i18n="services.training.item3">Workshops in English, Spanish and French</li>
+              <li data-i18n="services.training.item4">Virtual and in-person formats</li>
+            </ul>
+          </article>
+
+          <article class="card service service-teal reveal">
+            <span class="icon-tile icon-tile-md tile-teal"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-search-check"/></svg></span>
+            <h3 class="card-title" data-i18n="services.consulting.title">Consulting &amp; Assessment</h3>
+            <ul class="bullets" role="list">
+              <li data-i18n="services.consulting.item1">Needs assessments and program evaluation</li>
+              <li data-i18n="services.consulting.item2">Teacher preparation and supervision models</li>
+              <li data-i18n="services.consulting.item3">Curriculum and virtual learning guidance</li>
+              <li data-i18n="services.consulting.item4">Health and wellness strategies for schools</li>
+            </ul>
+          </article>
+
+          <!-- Highlighted card -->
+          <article class="card service service-featured reveal">
+            <div class="service-top">
+              <span class="icon-tile icon-tile-md tile-orange-solid"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+              <span class="badge" aria-hidden="true" data-i18n="services.ai.badge">AI</span>
+            </div>
+            <h3 class="card-title" data-i18n="services.ai.title">Education in the Age of AI</h3>
+            <ul class="bullets" role="list">
+              <li data-i18n="services.ai.item1">Understanding how artificial intelligence is changing formal education</li>
+              <li data-i18n="services.ai.item2">Guidance on responsible AI use for teachers and students</li>
+              <li data-i18n="services.ai.item3">Workshops for parents on AI at home and at school</li>
+              <li data-i18n="services.ai.item4">Policies and strategies for schools</li>
+            </ul>
+          </article>
+
+          <article class="card service reveal">
+            <span class="icon-tile icon-tile-md tile-navy"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-tablet"/></svg></span>
+            <h3 class="card-title" data-i18n="services.edtech.title">Educational Technology</h3>
+            <ul class="bullets" role="list">
+              <li data-i18n="services.edtech.item1">Laptops, tablets and projectors</li>
+              <li data-i18n="services.edtech.item2">Interactive displays and classroom devices</li>
+              <li data-i18n="services.edtech.item3">Virtual library and digital platform solutions</li>
+              <li data-i18n="services.edtech.item4">Setup guidance and teacher training</li>
+            </ul>
+          </article>
+
+          <article class="card service service-teal reveal">
+            <span class="icon-tile icon-tile-md tile-teal"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-building"/></svg></span>
+            <h3 class="card-title" data-i18n="services.facilities.title">School Facilities</h3>
+            <ul class="bullets" role="list">
+              <li data-i18n="services.facilities.item1">Maintenance and repairs</li>
+              <li data-i18n="services.facilities.item2">Facility assessments</li>
+              <li data-i18n="services.facilities.item3">Campus security solutions</li>
+              <li data-i18n="services.facilities.item4">Safe, healthy learning spaces</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         WHY CHOOSE US
+         ================================================================== -->
+    <section class="section why" aria-labelledby="why-title">
+      <div class="container stack-40">
+        <h2 class="section-title section-title-light" id="why-title" data-i18n="why.title">Why Choose Us</h2>
+        <ul class="grid grid-240" role="list">
+          <li class="why-card reveal">
+            <span class="why-check"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <p class="why-text"><strong data-i18n="why.item1Lead">International experience</strong><span data-i18n="why.item1Text"> across Puerto Rico, Latin America and the Caribbean</span></p>
+          </li>
+          <li class="why-card reveal">
+            <span class="why-check"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <p class="why-text"><strong data-i18n="why.item2Lead">Trilingual service</strong><span data-i18n="why.item2Text"> in English, Spanish and French</span></p>
+          </li>
+          <li class="why-card reveal">
+            <span class="why-check"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <p class="why-text"><strong data-i18n="why.item3Lead">End-to-end support,</strong><span data-i18n="why.item3Text"> from training to technology to facilities</span></p>
+          </li>
+          <li class="why-card reveal">
+            <span class="why-check"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <p class="why-text"><strong data-i18n="why.item4Lead">Based in Miami,</strong><span data-i18n="why.item4Text"> serving local and international schools</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         CONTACT
+         ================================================================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="stack-22 reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="section-title" id="contact-title" data-i18n="contact.title">Let's work together.</h2>
+          <p class="body-lg" data-i18n="contact.intro">Tell us about your school or project and we'll get back to you soon.</p>
+
+          <!-- ========== CONTACT DETAILS — REPLACE [PHONE] AND [EMAIL] ==========
+               Phone: replace BOTH "[PHONE]" below (in href="tel:…" use digits only, e.g. tel:+13055551234).
+               Email: replace BOTH "[EMAIL]" below (e.g. mailto:info@educotec.com).
+               Also update them in the "Structured data" block in the <head>. -->
+          <ul class="contact-list" role="list">
+            <li class="contact-item">
+              <span class="contact-icon"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-phone"/></svg></span>
+              <span class="contact-meta">
+                <span class="contact-label" data-i18n="contact.phoneLabel">Phone</span>
+                <a class="contact-value" href="tel:(305)781-8447">(305) 781-8447</a>
+              </span>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg></span>
+              <span class="contact-meta">
+                <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
+                <a class="contact-value" href="mailto:mvian3@gmail.com">mvian3@gmail.com</a>
+              </span>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <span class="contact-meta">
+                <span class="contact-label" data-i18n="contact.locationLabel">Location</span>
+                <span class="contact-value" data-i18n="contact.location">Miami, Florida</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ========== CONTACT FORM — SET YOUR FORM ADDRESS HERE ==========
+             1. Create a free form at https://formspree.io and copy its address
+                (it looks like https://formspree.io/f/abcdwxyz).
+             2. Replace https://formspree.io/f/YOUR_FORM_ID below with it.
+             Until then, sending the form shows the "Something went wrong" message. -->
+        <form class="contact-form reveal" id="contact-form"
+              action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+          <div class="field">
+            <label for="f-name"><span data-i18n="form.name">Name</span> <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="f-email"><span data-i18n="form.email">Email</span> <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          </div>
+
+          <div class="field">
+            <label for="f-phone" data-i18n="form.phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="f-role" data-i18n="form.role">I am a…</label>
+            <!-- The value="…" stays in English so every message you receive is consistent. -->
+            <select id="f-role" name="role">
+              <option value="" data-i18n="form.roleNone">—</option>
+              <option value="Student" data-i18n="form.roleStudent">Student</option>
+              <option value="Parent" data-i18n="form.roleParent">Parent</option>
+              <option value="Teacher" data-i18n="form.roleTeacher">Teacher</option>
+              <option value="School Administrator" data-i18n="form.roleAdmin">School Administrator</option>
+              <option value="Other" data-i18n="form.roleOther">Other</option>
+            </select>
+          </div>
+
+          <div class="field field-full">
+            <label for="f-message"><span data-i18n="form.message">Message</span> <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+          </div>
+
+          <!-- Anti-spam trap: hidden from people, bots fill it in and get ignored by Formspree. -->
+          <div class="visually-hidden" aria-hidden="true">
+            <label for="f-gotcha">Leave empty</label>
+            <input id="f-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Success / error message appears here -->
+          <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+
+          <button class="btn btn-primary form-submit" type="submit" data-i18n="form.submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-row">
+        <div class="footer-brand">
+          <img class="brand-logo" src="assets/educotec-logo.png" alt="Educotec Solutions" width="161" height="44" loading="lazy">
+          <span class="footer-tagline" data-i18n="footer.tagline">Educational Consulting & Technologies</span>
+        </div>
+        <nav aria-label="Footer navigation" data-i18n-aria="ui.footerNav">
+          <ul class="footer-nav" role="list">
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="#who" data-i18n="nav.who">Who We Serve</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- Language buttons (full names) are created automatically from js/translations.js -->
+        <div class="lang-toggle lang-toggle-footer" role="group" aria-label="Language" data-i18n-aria="ui.language" data-lang-toggle="name"></div>
+      </div>
+      <p class="copyright" data-i18n="footer.copyright">Educotec Solutions — Educational Consulting & Technologies. © 2026 Educotec Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: translations first, then the site logic. -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
