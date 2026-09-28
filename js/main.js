@@ -10,7 +10,7 @@
      1. Language switching (EN / ES, and any language added to translations.js)
      2. Mobile menu
      3. Smooth scrolling + highlighting the current section in the menu
-     4. Contact form: checking the fields and sending them to Formspree
+     4. Contact form: checking the fields and sending them to Web3Forms
      5. Fade-in animations and the counting numbers in the About section
    ========================================================================== */
 
@@ -281,11 +281,12 @@
 
   /* ===========================================================================
      4. CONTACT FORM
-     The form sends to the address in its action="…" attribute (index.html).
+     The form sends to Web3Forms (action="…" in index.html) using the
+     access key in the hidden "access_key" field.
      ======================================================================== */
 
   var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  var PLACEHOLDER_ENDPOINT = "YOUR_FORM_ID";
+  var PLACEHOLDER_KEY = "YOUR_ACCESS_KEY";
 
   function initForm() {
     var form = document.getElementById("contact-form");
@@ -352,10 +353,11 @@
         return;
       }
 
-      // 3) Form address not set up yet
+      // 3) Access key not set up yet
       var endpoint = form.getAttribute("action") || "";
-      if (endpoint.indexOf(PLACEHOLDER_ENDPOINT) !== -1) {
-        console.warn("[contact form] Set your Formspree address in index.html (search for YOUR_FORM_ID).");
+      var keyField = form.elements.access_key;
+      if (!keyField || !keyField.value || keyField.value === PLACEHOLDER_KEY) {
+        console.warn("[contact form] Set your Web3Forms access key in index.html (search for YOUR_ACCESS_KEY).");
         showStatus("form.errorNetwork", "error");
         return;
       }
@@ -370,7 +372,14 @@
         headers: { Accept: "application/json" }
       })
         .then(function (response) {
-          if (!response.ok) throw new Error("HTTP " + response.status);
+          // Web3Forms answers with JSON: { "success": true/false, "message": "…" }
+          return response.json().catch(function () { return {}; }).then(function (data) {
+            if (!response.ok || data.success === false) {
+              throw new Error("HTTP " + response.status + " " + (data.message || (data.body && data.body.message) || ""));
+            }
+          });
+        })
+        .then(function () {
           form.reset();
           showStatus("form.success", "success");
         })

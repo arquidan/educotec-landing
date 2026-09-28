@@ -48,17 +48,20 @@ While you're there, also search for **`YOUR-DOMAIN`** and replace it with the re
 
 ## 3. Connect the contact form
 
-The form sends messages through [Formspree](https://formspree.io), which has a free plan.
+The form sends messages through [Web3Forms](https://web3forms.com). The free plan allows 250 messages a month and doesn't need an account.
 
-1. Create a Formspree account and a new form. Use the email address where you want to receive messages.
-2. Copy the form address. It looks like `https://formspree.io/f/abcdwxyz`.
-3. In `index.html`, search for `YOUR_FORM_ID` and replace the whole address:
+1. Go to [web3forms.com](https://web3forms.com), enter the email address where you want to receive messages, and click **Create Access Key**.
+2. Check that inbox: Web3Forms emails you an **Access Key** (it looks like `a1b2c3d4-e5f6-...`).
+3. In `index.html`, search for `YOUR_ACCESS_KEY` and replace it with your key:
    ```html
-   <form … action="https://formspree.io/f/abcdwxyz" method="POST" novalidate>
+   <input type="hidden" name="access_key" value="a1b2c3d4-e5f6-...">
    ```
-4. Publish the site and send a test message. The first time, Formspree asks you to confirm by email.
+   The key only lets people *send* to your inbox, so it's safe to have in a public website or GitHub repository.
+4. Publish the site and send yourself a test message.
 
-Until step 3 is done, pressing **Send** shows the "Something went wrong" message.
+Right below the key you can also change the **subject line** and **sender name** of the emails you receive.
+
+Until step 3 is done, pressing **Send** shows the "Something went wrong" message. To send messages to a different inbox later, create a new key for that email and replace the old one.
 
 ## 4. Add French
 

@@ -7,7 +7,7 @@
     for visitors without JavaScript; it is replaced automatically on load.
   • CONTACT DETAILS: search this file for  [PHONE]  and  [EMAIL]
     (Contact section + "Structured data" block in the <head>).
-  • CONTACT FORM ADDRESS: search this file for  YOUR_FORM_ID.
+  • CONTACT FORM KEY: search this file for  YOUR_ACCESS_KEY  (Web3Forms).
   • WEBSITE ADDRESS: search this file for  YOUR-DOMAIN  (social previews + Google).
   • COLORS & FONTS: see the top of  css/styles.css.
   See README.md for step-by-step instructions.
@@ -423,13 +423,18 @@
           </ul>
         </div>
 
-        <!-- ========== CONTACT FORM — SET YOUR FORM ADDRESS HERE ==========
-             1. Create a free form at https://formspree.io and copy its address
-                (it looks like https://formspree.io/f/abcdwxyz).
-             2. Replace https://formspree.io/f/YOUR_FORM_ID below with it.
+        <!-- ========== CONTACT FORM (Web3Forms) — SET YOUR ACCESS KEY HERE ==========
+             1. Go to https://web3forms.com, enter the email where messages should
+                arrive, and they email you an "Access Key" (looks like a1b2c3d4-...).
+             2. Replace YOUR_ACCESS_KEY below with it. The key is safe to be public.
              Until then, sending the form shows the "Something went wrong" message. -->
         <form class="contact-form reveal" id="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+          <input type="hidden" name="access_key" value="a6fe78d9-3c82-4cc2-97f9-f76211a3544a">
+          <!-- Subject line and sender name of the email you receive (edit freely) -->
+          <input type="hidden" name="subject" value="New message from the Educotec website">
+          <input type="hidden" name="from_name" value="Educotec Website">
 
           <div class="field">
             <label for="f-name"><span data-i18n="form.name">Name</span> <span class="req" aria-hidden="true">*</span></label>
@@ -464,11 +469,8 @@
             <textarea id="f-message" name="message" rows="5" required></textarea>
           </div>
 
-          <!-- Anti-spam trap: hidden from people, bots fill it in and get ignored by Formspree. -->
-          <div class="visually-hidden" aria-hidden="true">
-            <label for="f-gotcha">Leave empty</label>
-            <input id="f-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-          </div>
+          <!-- Anti-spam trap: hidden from people; bots tick it and Web3Forms rejects them. -->
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
           <!-- Success / error message appears here -->
           <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
